@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h> 
 
 #define MaxLettres 50
 #define Essaies 10
@@ -14,12 +15,15 @@ int main() {
     char lettre;
         
     printf("Entrez le mot secret : ");
-    scanf("%s", motSecret);    
+    scanf("%s", motSecret);
+
     longueurMot = strlen(motSecret);
     for (int i = 0; i < longueurMot; i++) {
+        motSecret[i] = tolower(motSecret[i]);
         motAffiche[i] = '_';
     }
     motAffiche[longueurMot] = '\0';
+
     printf("Le mot contient %d lettres.\n", longueurMot);
     printf("Vous avez %d essaies.\n\n", Essaies);
 
@@ -34,13 +38,24 @@ int main() {
             }
         }
         printf("\n\n");
+
         printf("Donnez une lettre : ");
         scanf(" %c", &lettre);
+        lettre = tolower(lettre);  
+
+
+        if (lettre < 'a' || lettre > 'z') {
+            printf("Caractère invalide, entrez une lettre a-z.\n\n");
+            continue;
+        }
+
         if (lettresProposees[lettre - 'a']) {
             printf("Vous avez déjà donné la lettre '%c' !\n\n", lettre);
             continue;
         }
+
         lettresProposees[lettre - 'a'] = 1;
+
         for (int i = 0; i < longueurMot; i++) {
             if (motSecret[i] == lettre) {
                 motAffiche[i] = lettre;
@@ -48,6 +63,7 @@ int main() {
                 lettreTrouvee = 1;
             }
         }
+
         if (lettreTrouvee) {
             printf("Good tu as trouvé une lettre !\n\n");
         } else {
@@ -55,13 +71,14 @@ int main() {
             tentativesRestantes--;
         }
     }
+
     printf("Mot secret : %s\n", motSecret);
     printf("Votre résultat : %s\n\n", motAffiche);
     
     if (lettresTrouvees == longueurMot) {
-        printf("Bravo");
+        printf("Bravo ! Vous avez trouvé le mot.\n");
     } else {
-        printf("Perdu");
+        printf("Perdu ! Vous n'avez plus de tentatives.\n");
     }
     
     return 0;
