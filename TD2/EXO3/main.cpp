@@ -4,7 +4,7 @@
 #include <fstream>
 #include <iomanip>
 #include <vector>
-#include <cctype> // Pour tolower()
+#include <cctype>
 
 int main() {
     std::string nomdufichier;
