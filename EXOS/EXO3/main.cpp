@@ -27,6 +27,10 @@ class Chien : public Quadrupede {
 
 class Chat : public Quadrupede {
     public:
+        Chat(std::string name) {
+            std::cout << "hey je suis le chat " << name << std::endl;
+            set_name(name);
+        }
         void speak()  {
             std::cout << "MIAOU" << std::endl;
         }
@@ -35,7 +39,7 @@ class Chat : public Quadrupede {
 };
 
 int main() {
-    Chat chat;
+    Chat chat("graven");
     Chien chien("oiseau");
     std::cout << chien.get_name() << std::endl;
     chien.set_name("test");
