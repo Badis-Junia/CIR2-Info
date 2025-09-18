@@ -35,7 +35,9 @@ class Chat : public Quadrupede {
             std::cout << "MIAOU" << std::endl;
         }
 
-
+        ~Chat() {
+            delete this;
+        }
 };
 
 int main() {
