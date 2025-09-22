@@ -3,7 +3,7 @@
 #include <iostream>
 
 class BankAccount {
-    private:
+    protected:
         int number;
         std::string owner;
         float balance;
@@ -14,9 +14,10 @@ class BankAccount {
 
 class CheckingAccount : BankAccount {
     private:
-
+        float overdraftlimit;
     public:
-
+        float withdrawal(float amount);
+        
 };
 
 class SavingsAccount : BankAccount {
