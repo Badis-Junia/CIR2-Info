@@ -10,6 +10,8 @@ public:
     Fraction(int num, int den);  
     Fraction operator+(const Fraction &fraction);
     Fraction operator-(const Fraction &fraction);
+    Fraction operator*(const Fraction &fraction);
+    Fraction operator/(const Fraction &fraction);
     void print();
     Fraction plus(const Fraction &other);
     

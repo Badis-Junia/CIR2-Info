@@ -21,6 +21,20 @@ Fraction Fraction::operator-(const Fraction &fraction) {
     return result;
 }
 
+Fraction Fraction::operator*(const Fraction &fraction) {
+    Fraction result;
+    result.num = this->num * fraction.num;
+    result.den = this->den * fraction.den;
+    return result;
+}
+
+Fraction Fraction::operator/(const Fraction &fraction) {
+    Fraction result;
+    result.num = this->num * fraction.den;
+    result.den = this->den * fraction.num;
+    return result;
+}
+
 
 void Fraction::print() {
     std::cout << num << "/" << den;
