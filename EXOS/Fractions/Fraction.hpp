@@ -12,6 +12,11 @@ public:
     Fraction operator-(const Fraction &fraction);
     Fraction operator*(const Fraction &fraction);
     Fraction operator/(const Fraction &fraction);
+    double devenirentier() const;
+    bool operator<(const Fraction& other) const;
+    bool operator>(const Fraction& other) const;
+    friend std::istream& operator>>(std::istream& in, Fraction& f);
+
     void print();
     Fraction plus(const Fraction &other);
     

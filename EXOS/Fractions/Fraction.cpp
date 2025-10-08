@@ -37,10 +37,28 @@ Fraction Fraction::operator/(const Fraction &fraction) {
 
 
 void Fraction::print() {
-    std::cout << num << "/" << den;
+    std::cout << num << "/" << den << std::endl;
 }
 
 Fraction Fraction::plus(const Fraction &other) {
     return *this + other;
+}
+
+std::istream& operator>>(std::istream& in, Fraction& f) {
+    char slash;
+    in >> f.num >> slash >> f.den; // par exemple pour lire "3/4"
+    return in;
+}
+
+bool Fraction::operator<(const Fraction& other) const {
+    return (num * other.den) < (other.num * den);
+}
+
+bool Fraction::operator>(const Fraction& other) const {
+    return (num * other.den) > (other.num * den);
+}
+
+double Fraction::devenirentier() const {
+    return double(num) / double(den);
 }
 
