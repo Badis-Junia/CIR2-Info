@@ -13,7 +13,7 @@ int main() {
     std::cout << "a * b = " << d << "\n";
     std::cout << "a / b = " << (a / b) << "\n";
     std::cout << "Valeur décimale de a = " << a.toDouble() << "\n";
-
+    std::cout << "test"<<std::endl;
     return 0;
 }
 

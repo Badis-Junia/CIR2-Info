@@ -46,7 +46,7 @@ Fraction Fraction::plus(const Fraction &other) {
 
 std::istream& operator>>(std::istream& in, Fraction& f) {
     char slash;
-    in >> f.num >> slash >> f.den; // par exemple pour lire "3/4"
+    in >> f.num >> slash >> f.den; 
     return in;
 }
 

@@ -7,7 +7,7 @@ template<typename T>
 Fraction<T>::Fraction(T num, T den) : num(num), den(den) {
     if (den == 0)
         throw std::invalid_argument("Le dénominateur ne peut pas être nul.");
-    simplify();
+
 }
 
 template<typename T>
@@ -16,12 +16,10 @@ void Fraction<T>::simplify() {
         num = -num;
         den = -den;
     }
-    T gcd = std::gcd(num, den);
-    num /= gcd;
-    den /= gcd;
+
 }
 
-// ---- Opérateurs arithmétiques ----
+
 
 template<typename T>
 Fraction<T> Fraction<T>::operator+(const Fraction& other) const {
@@ -45,7 +43,7 @@ Fraction<T> Fraction<T>::operator/(const Fraction& other) const {
     return Fraction(num * other.den, den * other.num);
 }
 
-// ---- Opérateurs de comparaison ----
+
 
 template<typename T>
 bool Fraction<T>::operator==(const Fraction& other) const {
@@ -77,7 +75,7 @@ bool Fraction<T>::operator>=(const Fraction& other) const {
     return !(*this < other);
 }
 
-// ---- Utilitaires ----
+
 
 template<typename T>
 void Fraction<T>::print() const {
