@@ -12,7 +12,7 @@ int main() {
     for(long unsigned int i = 0;i<tab.size();i++) {
         std::cout << tab[i] <<std::endl;
     }
-
+    std::cout << "t est"<<std::endl;
     std::cout << std::endl;
 
     std::sort(tab.begin(), tab.end());

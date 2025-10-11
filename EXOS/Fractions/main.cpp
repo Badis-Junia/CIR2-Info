@@ -41,10 +41,6 @@ int main() {
 
     // std::cout << std::endl;
 
-
-
-
-
     std::vector<Fraction> tab;    
     long unsigned int nombre;
 
@@ -56,7 +52,7 @@ int main() {
         tab.push_back(value);   
     }
 
-
+    
     std::sort(tab.begin(), tab.end());
     std::cout << std::endl;
     std::cout << "Voilà le tableau trié \n" << std::endl;    
