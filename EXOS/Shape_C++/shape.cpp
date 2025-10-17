@@ -53,3 +53,6 @@ void Square::print_data() {
 void Square::print_area() {
     cout << "Shape type : Circle with radius : " << pow(length_, 2) << endl;
 }
+void Circle::print_data() {
+    cout << "Shape type : Circle with radius : " << 3.14 * pow(radius_, 2) << endl;
+}

@@ -8,5 +8,4 @@ int main() {
         std::cout << i << "x" << nombre << "=" << nombre * i << " ";
     }
     return 0;
-
 }

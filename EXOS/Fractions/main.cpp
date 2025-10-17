@@ -52,6 +52,7 @@ int main() {
         tab.push_back(value);   
     }
 
+
     
     std::sort(tab.begin(), tab.end());
     std::cout << std::endl;
@@ -68,4 +69,6 @@ int main() {
     }
     std::cout << "La moyenne est " << total / tab.size() << std::endl;
     std::cout << "La somme est " << total << std::endl;
+
+
 }

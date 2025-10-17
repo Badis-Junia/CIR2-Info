@@ -32,11 +32,7 @@ int main()
         tab_shape[i]->print_data();
     }
 
-    for (int i = 0; i < const_size; ++i)
-    {
-        delete tab_shape[i];
-    }
-    delete[] tab_shape;
+
 
     return EXIT_SUCCESS;
 }
