@@ -1,18 +1,12 @@
 #include <iostream>
 #include "Animal.hpp"
-
-template<typename T>
-void test(T oiseau) {
-    std::cout << oiseau << std::endl;
-}
-
+#include <string>
 int main() {
-    Oiseau<float> cheval;
-    cheval.setoiseau(2.5);
-    std::cout << cheval.getoiseau() << std::endl;
-    cheval.setoiseau(4.4);
-    std::cout << cheval.getoiseau() << std::endl;
-    test(3);
+
+    Animal<int> montest;
+    montest.setoiseau(3);
+    std::cout << montest.getoiseau() << std::endl;
+    montest.setoiseau(2);
+    std::cout << montest.getoiseau() << std::endl;
     return 0;
 }
-
