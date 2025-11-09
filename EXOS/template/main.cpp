@@ -1,6 +1,6 @@
 #include <iostream>
 #include "Animal.hpp"
-#include <string>
+
 int main() {
 
     Animal<int> montest;
