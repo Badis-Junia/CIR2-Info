@@ -11,6 +11,10 @@ void test2(int test2) {
     std::this_thread::sleep_for(std::chrono::milliseconds(500)); 
     std::cout << test2 << std::endl;
 }
+void test3(int test3) {
+    std::this_thread::sleep_for(std::chrono::milliseconds(500)); 
+    std::cout << test3 << std::endl;
+}
 
 int main() {
 
@@ -18,6 +22,7 @@ int main() {
 
     test(3);
     test2(5);
+    test2(8);
 
     auto end_seq = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double, std::milli> duration_seq = end_seq - start_seq;
@@ -28,9 +33,11 @@ int main() {
 
     std::thread t1(test, 3);
     std::thread t2(test2, 5);
+    std::thread t3(test3, 3);
 
     t1.join();
     t2.join();
+    t3.join();
 
     auto end_par = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double, std::milli> duration_par = end_par - start_par;
