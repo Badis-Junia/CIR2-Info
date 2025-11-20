@@ -33,6 +33,8 @@ int main() {
     }
     std::cout << "La moyenne est " << total / tab.size() << std::endl;
     std::cout << "La somme est " << total << std::endl;
+    Fraction mafraction(1, 0);
 
+    std::cout << mafraction.devenirentier() << std::endl;
 
 }

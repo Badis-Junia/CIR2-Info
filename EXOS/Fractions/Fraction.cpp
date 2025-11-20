@@ -59,6 +59,6 @@ bool Fraction::operator>(const Fraction& other) const {
 }
 
 double Fraction::devenirentier() const {
-    return double(num) / double(den);
+    return (float)this->num / (float)this->den;
 }
 
