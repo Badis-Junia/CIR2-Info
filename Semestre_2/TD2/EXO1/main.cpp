@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include <array>
+#include <stack>
 #include <vector>
 #include <list>
 #include <queue>
@@ -24,11 +24,11 @@ bool est_premier(int n) {
     return true;
 }
 
-
+// façon à respecter exactement ce que demande la consigne en utilisant l'example avec le vector, pas opti 
 void generer_premier_equipe_1(int n, int nombre_tour) {
     int i = 2;
     auto debut = std::chrono::high_resolution_clock::now();
-    std::array<int, 1000> array_nombre_entiers_premiers;
+    std::stack<int> stack_nombre_entiers_premiers;
     std::vector<int> vector_nombre_entiers_premiers;
     std::list<int> liste_nombre_entiers_premiers;
     std::queue<int> queue_nombre_entiers_premiers;
@@ -38,21 +38,36 @@ void generer_premier_equipe_1(int n, int nombre_tour) {
     }
     while(i < n) {
         if(est_premier(i)) {
-            for(int i =0;i<nombre_tour;i++) {
-                vector_nombre_entiers_premiers.push_back(i);
-                array_nombre_entiers_premiers[compteur_pour_tableau] = i;
-                liste_nombre_entiers_premiers.push_back(i);
-                queue_nombre_entiers_premiers.push(i);
-            }
+            vector_nombre_entiers_premiers.push_back(i);
         }
         compteur_pour_tableau++;
         i++;
+    }
+    for(int i =0;i<nombre_tour;i++) {
+        while (vector_nombre_entiers_premiers.size()) {
+            liste_nombre_entiers_premiers.push_back(vector_nombre_entiers_premiers.back());
+            vector_nombre_entiers_premiers.pop_back();
+        }
+        while (liste_nombre_entiers_premiers.size()) {
+            stack_nombre_entiers_premiers.push(liste_nombre_entiers_premiers.back());
+            liste_nombre_entiers_premiers.pop_back();
+        }
+        while (stack_nombre_entiers_premiers.size()) {
+            queue_nombre_entiers_premiers.push(stack_nombre_entiers_premiers.top());
+            stack_nombre_entiers_premiers.pop();
+        }
+        while (queue_nombre_entiers_premiers.size()) {
+            vector_nombre_entiers_premiers.push_back(queue_nombre_entiers_premiers.back());
+            queue_nombre_entiers_premiers.pop();
+        }
     }
     auto fin = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> duree = fin - debut;
     std::cout << "Temps écoulé pour la première équipe : " << duree.count() << " secondes\n";
 }
 
+
+// respecte aussi la consigne mais de manière optimisé, on voulait montrer qu'on peut utiliser deux méthodes différentes qui marchent
 void generer_premier_equipe_2(int n, int nombre_tour) {
     if (n <= 1000) {
         std::cout << "Prenez un entier supérieur à 1000\n";
@@ -92,11 +107,11 @@ void generer_premier_equipe_2(int n, int nombre_tour) {
 int main() {
     // première équipe 
 
-    generer_premier_equipe_1(1010, 3);
+    generer_premier_equipe_1(1010, 50);
 
     // deuxième équipe 
 
-    generer_premier_equipe_2(1010, 3);
+    generer_premier_equipe_2(1010, 50);
 
 
 
