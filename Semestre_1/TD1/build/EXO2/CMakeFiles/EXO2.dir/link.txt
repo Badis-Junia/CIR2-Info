@@ -1,0 +1,1 @@
+/usr/bin/cc -Wl,--dependency-file=CMakeFiles/EXO2.dir/link.d CMakeFiles/EXO2.dir/main.c.o -o EXO2

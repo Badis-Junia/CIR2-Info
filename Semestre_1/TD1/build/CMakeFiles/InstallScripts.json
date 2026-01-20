@@ -1,0 +1,14 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/kali/COURS/CIR2-Info/TD1/build/cmake_install.cmake",
+		"/home/kali/COURS/CIR2-Info/TD1/build/EXO1/cmake_install.cmake",
+		"/home/kali/COURS/CIR2-Info/TD1/build/EXO2/cmake_install.cmake",
+		"/home/kali/COURS/CIR2-Info/TD1/build/EXO3/cmake_install.cmake",
+		"/home/kali/COURS/CIR2-Info/TD1/build/EXO4/cmake_install.cmake",
+		"/home/kali/COURS/CIR2-Info/TD1/build/EXO5/cmake_install.cmake",
+		"/home/kali/COURS/CIR2-Info/TD1/build/EXO7/cmake_install.cmake",
+		"/home/kali/COURS/CIR2-Info/TD1/build/EXO8/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
