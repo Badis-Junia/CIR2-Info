@@ -104,6 +104,95 @@ void generer_premier_equipe_2(int n, int nombre_tour) {
 
 
 
+
+
+
+
+
+
+// Bonus mais pour la première équipe 
+
+template <typename T>
+std::ostream& operator<<(std::ostream& flux, const std::vector<T>& v) {
+    flux << "[";
+    for (int i = 0; i < v.size(); ++i) {
+        flux << v[i];
+        if (i != v.size() - 1)
+            flux << ", ";
+        }
+    flux << "]\n";
+    return flux;
+}
+
+template <typename T>
+std::ostream& operator<<(std::ostream& flux, const std::queue<T>& q) {
+    flux << "[";
+    for (int i = 0; i < q.size(); ++i) {
+        flux << q[i];
+        if (i != q.size() - 1)
+            flux << ", ";
+        }
+    flux << "]\n";
+    return flux;
+}
+
+template <typename T>
+std::ostream& operator<<(std::ostream& flux, const std::stack<T>& s) {
+    flux << "[";
+    for (int i = 0; i < s.size(); ++i) {
+        flux << s[i];
+        if (i != s.size() - 1)
+            flux << ", ";
+        }
+    flux << "]\n";
+    return flux;
+}
+
+template <typename T>
+std::ostream& operator<<(std::ostream& flux, const std::list<T>& l) {
+    flux << "[";
+    for (int i = 0; i < l.size(); ++i) {
+        flux << l[i];
+        if (i != l.size() - 1)
+            flux << ", ";
+        }
+    flux << "]\n";
+    return flux;
+}
+
+
+// Bonus mais pour la deuxième équipe
+
+template <typename T, typename S>
+std::ostream& operator<<(std::ostream& flux, const std::map<T, S>& v) {
+    for (auto it : v)
+        flux << it.first << " : " << it.second << "\n";
+    return flux;
+}
+
+template <typename T, typename S>
+std::ostream& operator<<(std::ostream& flux, const std::set<T, S>& v) {
+    for (auto it : v)
+        flux << it.first << " : " << it.second << "\n";
+    return flux;
+}
+
+template <typename T, typename S>
+std::ostream& operator<<(std::ostream& flux, const std::multiset<T, S>& v) {
+    for (auto it : v)
+        flux << it.first << " : " << it.second << "\n";
+    return flux;
+}
+
+template <typename T, typename S>
+std::ostream& operator<<(std::ostream& flux, const std::multimap<T, S>& v) {
+    for (auto it : v)
+        flux << it.first << " : " << it.second << "\n";
+    return flux;
+}
+
+
+
 int main() {
     // première équipe 
 
