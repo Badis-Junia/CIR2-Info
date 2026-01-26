@@ -1,3 +1,0 @@
-Ca affiche 4 pour le premier programme.
-Ca affiche 4 pour le deuxième aussi.
-L'instruction est effectué 11 fois.
