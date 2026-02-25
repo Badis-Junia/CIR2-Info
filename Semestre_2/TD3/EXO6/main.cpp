@@ -1,5 +1,3 @@
-// étant donné que j'ai déjà réalisé la partie 5 et qu'on l'affiche, pas besoin de tout refaire 
-
 #include <iostream>
 #include <string>
 #include <vector>
