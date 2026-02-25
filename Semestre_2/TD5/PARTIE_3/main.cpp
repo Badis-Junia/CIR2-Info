@@ -23,10 +23,11 @@ void afficherChemin (int sommet1, int sommet2, bool & premier) {
         return;
     afficherChemin (sommet1, suivant, premier);
     if (premier) {
-        std::cout << " \t\t par ";
-        premier = false; }
-    else {
-        std::cout << " et "; }
+        std::cout << " par ";
+        premier = false; 
+    } else {
+        std::cout << " et "; 
+    }
     std::cout << vecSommets[suivant];
     afficherChemin (suivant, sommet2, premier);
 }

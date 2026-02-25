@@ -1,0 +1,7 @@
+Résumé & Objectifs.
+Deux algorithmes répondant au problème du plus court chemin, l’algorithme de Dijkstra et
+l’algorithme de Floyd-Warshall, sont étudiés dans ce TD&P. La partie sur l’algorithme de
+Dijkstra se focalise sur la compréhension de celui-ci en relevant la trace sur plusieurs
+exemples. L’algorithme de Floyd-Warshall sera quant à lui implémenté. Il pourra ainsi
+répondre à des situations bien réelles, comme l'établissement de tous les plus courts
+chemins entre un ensemble de villes.
