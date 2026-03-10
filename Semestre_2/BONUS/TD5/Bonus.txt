@@ -1,0 +1,18 @@
+Floyd-Warshall est un algorithme qui calcule les plus courts chemins entre toutes les paires de sommets d'un graphe. Il fonctionne par étapes, en ajoutant progressivement des sommets intermédiaires pour voir s'ils permettent d'obtenir des chemins plus courts.
+
+Ce qui est important à savoir, c'est que contrairement à Dijkstra qui ne supporte pas les poids négatifs, Floyd-Warshall les accepte, donc c'est l'un de ses avantages. L'algorithme fonctionne correctement tant qu'il n'y a pas de cycle absorbant dans le graphe.
+
+La raison pour laquelle il supporte les poids négatifs est simple : il regarde systématiquement toutes les combinaisons de chemins possibles. Une arête négative seule ne pose pas de problème, car l'algorithme va simplement constater qu'elle permet de réduire le coût d'un chemin, et il mettra donc à jour ses tables. Tandis que l'algorithme de Dijkstra ne va pas revenir en arrière.
+
+Le véritable problème vient des cycles absorbants. Un cycle absorbant, c'est un cycle dont la somme des poids est négative. Si un cycle existe dans le graphe et qu'on peut l'emprunter, alors on peut rendre un chemin aussi court qu'on veut en tournant dessus tout le temps. Le coût du chemin tend alors vers + infini, et il n'y a plus de plus court chemin.
+
+Floyd-Warshall ne détecte pas automatiquement ces cycles. Il va continuer à faire ses calculs et va propager des valeurs de plus en plus petites, ce qui produira des résultats faux sans qu'on s'en rende compte.
+
+Pour que ça marche, il faut vérifier ces conditions : 
+
+1. Détecter les cycles négatifs après l'exécution
+
+2. Vérifier l'absence de cycles négatifs avant l'exécution
+
+3. Adapter la formulation du problème
+
